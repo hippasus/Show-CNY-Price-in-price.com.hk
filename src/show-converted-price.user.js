@@ -3,7 +3,7 @@
 // @namespace   hippasus
 // @description Show CNY price for price.com.hk
 // @include     http://www.price.com.hk/*
-// @version     1
+// @version     0.1
 // @grant       none
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
 // @require     https://raw.github.com/josscrowcroft/accounting.js/master/accounting.min.js
