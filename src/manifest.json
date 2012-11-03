@@ -1,6 +1,6 @@
 {
   "name": "Show CNY price for price.com.hk",
-  "version": "0.1",
+  "version": "0.2",
   "manifest_version": 2,
   "icons": {
     "16": "img/icon16.png",
@@ -8,9 +8,10 @@
     "128": "img/icon128.png"
   },
   "content_scripts": [{
-    "js": ["jquery.min.js", "accounting.min.js", "show-converted-price.user.js"],
+    "js": ["jquery-1.8.2.min.js", "accounting.min.js", "show-converted-price.user.js"],
     "css": [],
     "matches": ["http://www.price.com.hk/*"],
     "run_at": "document_end"
-  }]
+  }],
+  "permissions": [ "http://rate-exchange.appspot.com/*" ]
 }

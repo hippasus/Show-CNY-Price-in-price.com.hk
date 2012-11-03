@@ -3,16 +3,18 @@
 // @namespace   hippasus
 // @description Show CNY price for price.com.hk
 // @include     http://www.price.com.hk/*
-// @version     0.1
+// @version     0.2
 // @grant       none
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
 // @require     https://raw.github.com/josscrowcroft/accounting.js/master/accounting.min.js
 // ==/UserScript==
-
 $(function() {
-	var __version__ = '0.1',
+	"use strict"
+
+	var __version__ = '0.2',
 
 		currency_base, rates, _delay = 100,
+		RATE_PATTERN = /^\d+\.\d+/,
 
 		getRates = function() {
 
@@ -24,11 +26,11 @@ $(function() {
 
 			currency_base = localStorage["currency_base"];
 
-			if (rates_json) {
+			if(rates_json) {
 				rates = JSON.parse(rates_json);
 			}
 
-			if (rates && currency_base && local_timestamp && (timestamp - local_timestamp < cache_duration)) {
+			if(rates && currency_base && local_timestamp && (timestamp - local_timestamp < cache_duration)) {
 				var d = $.Deferred(),
 					promise = d.promise();
 
@@ -37,11 +39,35 @@ $(function() {
 				return promise;
 			}
 
-			var requestXHR = $.getJSON("http://openexchangerates.org/latest.json");
+			var requestXHR = $.ajax({
+				url: "http://rate-exchange.appspot.com/currency?from=HKD&to=CNY&q=1",
+				type: 'GET'
+			});
+			/*
+			var requestXHR = (function() {
+				var df = $.Deferred(),
+					xhr = new XMLHttpRequest();
+
+				xhr.open('GET', 'http://rate-exchange.appspot.com/currency?from=HKD&to=CNY&q=1', true);
+				xhr.onreadystatechange = function() {
+					if(xhr.readyState === 4) {
+						if(xhr.status !== 200 && xhr.status !== 304) {
+							df.reject();
+						}
+						df.resolve(JSON.parse(xhr.responseText));
+					}
+				};
+				xhr.send();
+
+				return df.promise();
+			}());*/
 
 			requestXHR.done(function(data) {
-				rates = data.rates;
-				currency_base = data.base;
+				rates = {
+					'HKD': 1,
+					'CNY': data.rate
+				};
+				currency_base = 'HKD';
 
 				localStorage["rates"] = JSON.stringify(rates);
 				localStorage["currency_base"] = currency_base;
@@ -60,7 +86,7 @@ $(function() {
 		timerID,
 		// register events
 		registerEventHandler = function() {
-			$("span.price, span.cheap, a.pgrid_price, a.rank_price, a.idx_rank_price").on('mouseover', function() {
+			$("body").on('mouseover', 'span.price, span.cheap, a.pgrid_price, a.rank_price, a.idx_rank_price', function() {
 				var $this = $(this),
 					pos = $this.offset(),
 					offset = {
@@ -74,7 +100,7 @@ $(function() {
 				pos.left += offset.left;
 				pos.top += offset.top;
 
-				if (timerID) {
+				if(timerID) {
 					clearTimeout(timerID);
 				}
 
@@ -84,7 +110,7 @@ $(function() {
 					timerID = null;
 				}, _delay);
 			}).on('mouseout', function() {
-				if (timerID) {
+				if(timerID) {
 					clearTimeout(timerID);
 					timerID = null;
 				}
