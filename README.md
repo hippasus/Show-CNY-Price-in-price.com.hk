@@ -22,7 +22,7 @@ Usage
 -----
 
 Go to [香港格價網 Price.com.hk](http://www.price.com.hk/), move your mouse cursor upon any price, and the CNY price will appear. :) <br />
-访问[香港格價網 Price.com.hk](http://www.price.com.hk/),移动鼠标到任意价格上，会提示对应的实时的人民币价格。 ：）
+访问[香港格價網 Price.com.hk](http://www.price.com.hk/),移动鼠标到任意价格上，会提示对应的实时的人民币价格。 ：)
 
 Notes
 -----
