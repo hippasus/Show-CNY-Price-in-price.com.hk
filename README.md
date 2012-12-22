@@ -8,11 +8,11 @@ Show CNY price for price.com.hk. <br />
 Installation
 ------------
 
-#For Chrome
+###For Chrome
 Install the extention at [chrome app store](https://chrome.google.com/webstore/detail/show-cny-price-for-pricec/hkachhadalpnldgebiopoffcffmbgagn). <br />
 访问[Chrome应用商店](https://chrome.google.com/webstore/detail/show-cny-price-for-pricec/hkachhadalpnldgebiopoffcffmbgagn)进行安装。
 
-#For Firefox:
+###For Firefox:
 1. Install Greasemonkey(https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) if not yet installed. <br />
    先安装 [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)，如已安装则可跳过些步骤；
 2. Go to [http://userscripts.org/scripts/show/145150](http://userscripts.org/scripts/show/145150) and click the Install button at the right top of the page. <br />
