@@ -14,7 +14,7 @@ Install the extention at [chrome app store](https://chrome.google.com/webstore/d
 
 ###For Firefox:
 1. Install Greasemonkey(https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) if not yet installed. <br />
-   先安装 [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)，如已安装则可跳过些步骤；
+   先安装 [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)，如已安装则可跳过此步骤；
 2. Go to [http://userscripts.org/scripts/show/145150](http://userscripts.org/scripts/show/145150) and click the Install button at the right top of the page. <br />
    访问[http://userscripts.org/scripts/show/145150](http://userscripts.org/scripts/show/145150)，点击页面右上角的Install按钮进行安装。
 
