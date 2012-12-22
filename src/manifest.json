@@ -1,6 +1,6 @@
 {
   "name": "Show CNY price for price.com.hk",
-  "version": "0.2",
+  "version": "1.0",
   "manifest_version": 2,
   "icons": {
     "16": "img/icon16.png",
@@ -13,5 +13,5 @@
     "matches": ["http://www.price.com.hk/*"],
     "run_at": "document_end"
   }],
-  "permissions": [ "http://rate-exchange.appspot.com/*" ]
+  "permissions": [ "http://rate-exchange.appspot.com/*", "http://finance.yahoo.com/*" ]
 }
