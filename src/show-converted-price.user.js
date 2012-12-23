@@ -5,7 +5,7 @@
 // @icon		https://github.com/hyacinth/Show-CNY-Price-in-price.com.hk/raw/master/src/img/icon128.png
 // @author		Hippasus Chu
 // @include		http://www.price.com.hk/*
-// @version		1.0
+// @version		1.0.1
 // @grant		GM_getValue
 // @grant		GM_setValue
 // @grant		GM_deleteValue
@@ -20,7 +20,7 @@
 $(function() {
 	"use strict"
 
-	var __version__ = '1.0',
+	var __version__ = '1.0.1',
 
 		currency_base, rates, _delay = 100,
 		RATE_PATTERN = /^\d+\.\d+/,
