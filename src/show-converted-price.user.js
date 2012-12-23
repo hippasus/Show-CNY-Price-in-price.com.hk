@@ -15,7 +15,6 @@
 // @grant		unsafeWindow
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js
 // @require		https://raw.github.com/josscrowcroft/accounting.js/master/accounting.min.js
-
 // @run-at		document-end
 // ==/UserScript==
 $(function() {
@@ -32,16 +31,16 @@ $(function() {
 				STORAGE_CURRENCY_TIMESTAMP_KEY = "currency_timestamp",
 				STORAGE_CURRENCY_BASE_KEY = "currency_base",
 
-				firefoxGreeseMonkeyMode = (typeof GM_getValue !== 'undefined') && GM_getValue.toString && (GM_getValue.toString().indexOf("not supported") < 0),
+				firefoxGreaseMonkeyMode = (typeof GM_getValue !== 'undefined') && GM_getValue.toString && (GM_getValue.toString().indexOf("not supported") < 0),
 				loadStorage = function(key) {
-					if(firefoxGreeseMonkeyMode) {
+					if(firefoxGreaseMonkeyMode) {
 						return GM_getValue(key);
 					} else {
 						return localStorage[key];
 					}
 				},
 				saveStorage = function(key, val) {
-					if(firefoxGreeseMonkeyMode) {
+					if(firefoxGreaseMonkeyMode) {
 						GM_setValue(key, val);
 					} else {
 						localStorage[key] = val;
@@ -59,7 +58,7 @@ $(function() {
 
 						makeRequestXhrPromise = function(url) {
 							var promise;
-							if(firefoxGreeseMonkeyMode) {
+							if(firefoxGreaseMonkeyMode) {
 								var xhrDeferred = $.Deferred();
 								GM_xmlhttpRequest({
 									method: "GET",
