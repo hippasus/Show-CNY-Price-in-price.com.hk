@@ -27,4 +27,4 @@ Go to [香港格價網 Price.com.hk](http://www.price.com.hk/), move your mouse 
 Notes
 -----
 
-This chrome extension depends on the [ExchangeRates](https://github.com/hyacinth/ExchangeRates) project and [Yahoo finace](http://finance.yahoo.com/).
+This chrome extension depends on the [ExchangeRates](https://github.com/hippasus/ExchangeRates) project and [Yahoo finace](http://finance.yahoo.com/).
