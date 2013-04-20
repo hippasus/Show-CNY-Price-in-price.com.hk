@@ -2,10 +2,10 @@
 // @name		Show CNY price for price.com.hk
 // @namespace	hippasus
 // @description	Show CNY price for price.com.hk
-// @icon		https://github.com/hyacinth/Show-CNY-Price-in-price.com.hk/raw/master/src/img/icon128.png
+// @icon		https://raw.github.com/hippasus/Show-CNY-Price-in-price.com.hk/master/src/img/icon128.png
 // @author		Hippasus Chu
 // @include		http://www.price.com.hk/*
-// @version		1.0.1
+// @version		1.0.2
 // @grant		GM_getValue
 // @grant		GM_setValue
 // @grant		GM_deleteValue
@@ -13,14 +13,14 @@
 // @grant		GM_xmlhttpRequest
 // @grant		GM_log
 // @grant		unsafeWindow
-// @require		http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js
+// @require		http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js
 // @require		https://raw.github.com/josscrowcroft/accounting.js/master/accounting.min.js
 // @run-at		document-end
 // ==/UserScript==
 $(function() {
 	"use strict"
 
-	var __version__ = '1.0.1',
+	var __version__ = '1.0.2',
 
 		currency_base, rates, _delay = 100,
 		RATE_PATTERN = /^\d+\.\d+/,
